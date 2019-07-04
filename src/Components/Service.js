@@ -1,5 +1,5 @@
 import React from 'react';
-import Service from './Service/Service'
+
 const json_data =  {data:[{
     host_name: "Microsoft",
     ip: "192.168.154.2",
@@ -61,15 +61,25 @@ const json_data =  {data:[{
     {
         port: '6500',
         type: 'tcp'
+    },
+    {
+        name: 'test',
+        port: '80',
+        type: 'tcp'
     }
     ]
  }]
  };
 
-class Services extends React.Component{
-   renderAll(){
-       let data =[]; 
 
+class Services extends React.Component{
+    
+ 
+
+   
+   
+    renderAll(){
+       let data =[]; 
         for(let x in json_data.data){
             for(let i in json_data.data[x].servic){
                 data.push(<Service
@@ -83,12 +93,41 @@ class Services extends React.Component{
             data
         );
    }
+   renderService(x){
+       let data =[]; 
+    for(let i in json_data.data[x].servic){ 
+        data.push(<Service
+        serviceName = {json_data.data[x].servic[i].name}
+        port = {json_data.data[x].servic[i].port}
+        type = {json_data.data[x].servic[i].type}
+        />);
+    }
+        return(
+            data
+        );   
+    }
+
+
     render(){
+       if(this.props.renderOneService){
+            return(
+                this.renderService(this.props.serviceValue)
+            );
+        }
         return(
             this.renderAll()
-            );
-
+        );
     }
 }
 
-export default Services
+
+function Service(props){
+    return(
+        <div>
+        <span className="service">Name:{props.serviceName} </span>
+        <span className="port">Port:{props.port} </span>
+        <span className="type">Type:{props.type} </span>
+        </div>        
+    );
+}
+export default Services;

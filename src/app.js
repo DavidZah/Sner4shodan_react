@@ -1,7 +1,8 @@
 import React from 'react'; 
-import Menu from './home'
-import Services from './Services/Services'
-import Hosts from './Hosts/Hosts'
+import Hosts from './Components/Host'
+import Home from './Components/Home'
+import Services from './Components/Service'
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
@@ -24,6 +25,7 @@ function AppRouter(){
                 </nav>
                 <Route path="/services/" exact component = {Services}/>
                 <Route path="/hosts/" exact component = {Hosts}/>
+                <Route path="/" exact component = {Home}/>
             </div>
         </Router>
     );

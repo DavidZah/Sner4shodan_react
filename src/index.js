@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import { BrowserRouter } from 'react-router-dom';
-import Menu from './pages/home';
+import AppRouter from './app'
 
 
 
 
 ReactDOM.render(
     <BrowserRouter>
-    <Menu />
+    <AppRouter/>
     </BrowserRouter>,
     document.getElementById('root')
   );
