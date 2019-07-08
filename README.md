@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##You must install 
+Node js by command sudo apt-get install -y nodejs
+React by sudo npm install -g create-react-app
 
 ## Available Scripts
 

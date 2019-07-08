@@ -1,5 +1,4 @@
 import React from 'react';
-import Host from './Host';
 import Services from './Service';
 
 const json_data = {
@@ -79,23 +78,17 @@ const json_data = {
     ],
 };
 
-class Home extends React.Component {
-    renderJson() {
-        let data = [];
-        for (let x in json_data.data) {
-            data.push(<h3>{json_data.data[x].host_name}</h3>);
-            data.push(<Services renderOneService={true} serviceValue={x} />);
-        }
-        return data;
-    }
-    render() {
-        let projectName = 'Sner4Shodan';
-        return (
-            <div>
-                <div className="projectName">{projectName}</div>
-                {this.renderJson()}
-            </div>
-        );
-    }
+export function Home() {
+    const projectName = 'Sner4Shodan';
+    return (
+        <div>
+            <div className="projectName">{projectName}</div>
+            {json_data.data.map((service, serviceKey) => (
+                <div key={serviceKey}>
+                    <h3>{service.host_name}</h3>
+                    <Services renderOneService={true} serviceValue={serviceKey} />
+                </div>
+            ))}
+        </div>
+    );
 }
-export default Home;

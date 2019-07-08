@@ -73,8 +73,7 @@ const json_data = {
     ],
 };
 
-class Host extends React.Component {
-    render() {
+function HostButton() {
         return (
             <div>
                 <button className="host" onClick={() => this.props.onClick()}>
@@ -82,23 +81,20 @@ class Host extends React.Component {
                 </button>
             </div>
         );
-    }
 }
 
-class BackButton extends React.Component {
-    render() {
+function BackButton() {
         return (
             <button className="back" onClick={() => this.props.onClick()}>
                 Back
             </button>
         );
-    }
 }
 
-class Hosts extends React.Component {
+class Host extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { renderOnehost: false, hostValue: 0 };
+        this.state = {hostValue: 0 };
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -119,12 +115,12 @@ class Hosts extends React.Component {
     renderAll() {
         let data = [];
         for (let x in json_data.data) {
-            data.push(<Host host_name={json_data.data[x].host_name} onClick={() => this.handleClick(x)} />);
+            data.push(<HostButton host_name={json_data.data[x].host_name} onClick={() => this.handleClick(x)} />);
         }
         return data;
     }
     renderHost(number) {
-        return <Host host_name={json_data.data[number].host_name} onClick={() => this.handleClick(number)} />;
+        return <HostButton host_name={json_data.data[number].host_name} onClick={() => this.handleClick(number)} />;
     }
     renderServices(number) {
         return <Services renderOneService={true} serviceValue={number} />;
@@ -133,16 +129,13 @@ class Hosts extends React.Component {
         return <BackButton onClick={() => this.handleBackClick()} />;
     }
     render() {
-        if (this.state.renderOnehost) {
             return (
                 <div>
                     {this.renderBackButton()}
                     {this.renderServices(this.state.hostValue)}
                 </div>
             );
-        }
-        return this.renderAll();
     }
 }
 
-export default Hosts;
+export default Host;
