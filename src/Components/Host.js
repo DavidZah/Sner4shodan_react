@@ -74,27 +74,27 @@ const json_data = {
 };
 
 function HostButton() {
-        return (
-            <div>
-                <button className="host" onClick={() => this.props.onClick()}>
-                    {this.props.host_name}
-                </button>
-            </div>
-        );
+    return (
+        <div>
+            <button className="host" onClick={() => this.props.onClick()}>
+                {this.props.host_name}
+            </button>
+        </div>
+    );
 }
 
 function BackButton() {
-        return (
-            <button className="back" onClick={() => this.props.onClick()}>
-                Back
-            </button>
-        );
+    return (
+        <button className="back" onClick={() => this.props.onClick()}>
+            Back
+        </button>
+    );
 }
 
 class Host extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {hostValue: 0 };
+        this.state = { hostValue: 0 };
 
         this.handleClick = this.handleClick.bind(this);
     }
@@ -129,12 +129,12 @@ class Host extends React.Component {
         return <BackButton onClick={() => this.handleBackClick()} />;
     }
     render() {
-            return (
-                <div>
-                    {this.renderBackButton()}
-                    {this.renderServices(this.state.hostValue)}
-                </div>
-            );
+        return (
+            <div>
+                {this.renderBackButton()}
+                {this.renderServices(this.state.hostValue)}
+            </div>
+        );
     }
 }
 

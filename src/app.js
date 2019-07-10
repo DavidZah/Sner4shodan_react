@@ -1,8 +1,9 @@
 import React from 'react';
 import { Home } from './Components/Home';
 import Services from './Components/Service';
-import {Hosts} from './Components/Hosts';
+import { Hosts } from './Components/Hosts';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Host from './Components/Host';
 
 function AppRouter() {
     return (
@@ -22,7 +23,8 @@ function AppRouter() {
                     </ul>
                 </nav>
                 <Route path="/services/" exact component={Services} />
-                <Route path="/host/:id" component={Hosts} />
+                <Route path="/hosts/" component={Hosts} />
+                <Route path="/hosts/:id" component={Host} />
                 <Route path="/" exact component={Home} />
             </>
         </Router>
