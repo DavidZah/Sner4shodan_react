@@ -12,24 +12,12 @@ import {getJsonData} from './../Api'
     );
 }
 
-function HostRedirect(prosp){
-
-    return(        
-        <Route path={'/test'} component={Hello} key={'name'}/>
-    ); 
-}
-
-function Hello(){
-    return(
-        <h3>hello</h3>
-    );
-}
 
 export class Hosts extends React.Component{
     
     handleClick(i) {
         this.setState((state) => ({
-        
+            
         }));
     }
 
@@ -44,7 +32,7 @@ export class Hosts extends React.Component{
 
     render(){
         return(
-            <HostRedirect/>
+            this.renderAll()
         );
     }
 }

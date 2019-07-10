@@ -24,7 +24,6 @@ function AppRouter() {
                 </nav>
                 <Route path="/services/" exact component={Services} />
                 <Route path="/hosts/" component={Hosts} />
-                <Route path="/hosts/:id" component={Host} />
                 <Route path="/" exact component={Home} />
             </>
         </Router>
