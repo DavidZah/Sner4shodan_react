@@ -10,7 +10,7 @@ export function Home() {
             <div className="projectName">{projectName}</div>
             {json_data.data.map((service, serviceKey) => (
                 <div key={serviceKey}>
-                    <h3>{service.host_name}</h3>
+                    <h1>{service.host_name}</h1>
                     <Services renderOneService={true} serviceValue={serviceKey} />
                 </div>
             ))}

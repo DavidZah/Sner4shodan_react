@@ -124,6 +124,16 @@ export function getJsonData() {
                         info:'domain name sever',
                         commnet:'try hack it'
                     },
+                    {
+                        id: 3,
+                        host_id:2,
+                        proto: 'blerb',
+                        port: 40,
+                        state:'active',
+                        name:'dns',
+                        info:'domain name sever',
+                        commnet:'try hack it'
+                    },
                 ],
             }
         ],
