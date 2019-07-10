@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const json_data =  {data:[{
     host_name: "Microsoft",
@@ -82,11 +83,25 @@ const json_data =  {data:[{
     );
 }
 
+function HostRedirect(prosp){
+
+    return(        
+     <Route path={'/test'} component={Hello} key={'name'}/>
+
+    ); 
+}
+
+function Hello(){
+    return(
+        <h3>hello</h3>
+    );
+}
+
 export class Hosts extends React.Component{
     
     handleClick(i) {
         this.setState((state) => ({
-
+        
         }));
     }
 
@@ -95,12 +110,12 @@ export class Hosts extends React.Component{
         for (let i in json_data.data) {
             data.push(<HostButton host_name={json_data.data[i].host_name} onClick={() => this.handleClick(i)} />);
         }
-        return dataa;
+        return data;
     }
 
     render(){
         return(
-            this.renderAll()
+            <HostRedirect/>
         );
     }
 }

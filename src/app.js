@@ -22,7 +22,7 @@ function AppRouter() {
                     </ul>
                 </nav>
                 <Route path="/services/" exact component={Services} />
-                <Route path="/hosts/" exact component={Hosts} />
+                <Route path="/host/:id" component={Hosts} />
                 <Route path="/" exact component={Home} />
             </>
         </Router>
