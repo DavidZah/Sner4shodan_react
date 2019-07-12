@@ -15,7 +15,7 @@ import { Route, Redirect } from 'react-router'
 
 export class Hosts extends React.Component{
     
-    handleClick(i) {
+    handleBack() {
 
     }
 

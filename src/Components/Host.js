@@ -1,5 +1,6 @@
 import React from 'react';
-import Services from './Service';
+import PropTypes from "prop-types";
+import { withRouter } from "react-router";
 import {getJsonData} from './../Api'
 
 
@@ -12,37 +13,27 @@ function BackButton() {
         );
 }
 
+function ErrorNotFound(props){
+    return(
+        <h2>Don´t found any {props.name}</h2>
+    );
+}
+
 class Host extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {hostValue: 0 };
-
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleBackClick() {
-        this.setState((state) => ({
-            renderOnehost: false,
-            hostValue: 0,
-        }));
-    }
-
-
-    renderServices(number) {
-        return <Services renderOneService={true} serviceValue={number} />;
-    }
-
-    renderBackButton() {
-        return <BackButton onClick={() => this.handleBackClick()} />;
-    }
     
-    render() {
-            return (
-                <div>
-                    {this.renderBackButton()}
-                    {this.renderServices(this.state.hostValue)}
-                </div>
-            );
+
+  
+    render(){
+      return(
+          <div>
+          <ErrorNotFound 
+          name ={this.props.match.params.id}
+          />
+          <BackButton 
+          
+          />
+        </div>
+      );
     }
 }
 
