@@ -11,7 +11,7 @@ export function Home() {
             {json_data.data.map((service, serviceKey) => (
                 <div key={serviceKey}>
                     <h1>{service.host_name}</h1>
-                    <Services renderOneService={true} serviceValue={serviceKey} />
+                    <Services renderOneService={true} service={service} />
                 </div>
             ))}
         </div>

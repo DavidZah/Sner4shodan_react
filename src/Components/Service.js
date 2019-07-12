@@ -1,7 +1,5 @@
 import React from 'react';
 import {getJsonData} from './../Api'
-import { get } from 'http';
-import { nullLiteral } from '@babel/types';
 
 function Service(props){
     return(
@@ -23,21 +21,9 @@ function Service(props){
 
 class Services extends React.Component{
     
-    renderAll(){
-        const json_data = getJsonData(); 
-        return(
-            json_data.data.map((s,serviceKey) => (
-                this.renderService(serviceKey)
-                ))
-        );
-   }
-
-
-   /*test part for rendel all by pavol*/
-   renderService(x){
-       const json_data = getJsonData();
+   renderService(data){
        return(
-            json_data.data[x].service.map((serviceKey) => (
+            data.service.map((serviceKey) => (
                 <Service
                 id = {serviceKey.id}
                 id = {serviceKey.id}
@@ -57,11 +43,15 @@ class Services extends React.Component{
     render(){
        if(this.props.renderOneService){
             return(
-                this.renderService(this.props.serviceValue)
+                this.renderService(this.props.service)
             );
         }
+        const json_data = getJsonData(); 
         return(
-            this.renderAll()
+           
+            json_data.data.map((data) => (
+                this.renderService(data)
+                ))
         );
     }
 }

@@ -3,15 +3,6 @@ import Services from './Service';
 import {getJsonData} from './../Api'
 
 
-function HostButton() {
-        return (
-            <div>
-                <button className="host" onClick={() => this.props.onClick()}>
-                    {this.props.host_name}
-                </button>
-            </div>
-        );
-}
 
 function BackButton() {
         return (
@@ -28,6 +19,7 @@ class Host extends React.Component {
 
         this.handleClick = this.handleClick.bind(this);
     }
+
     handleBackClick() {
         this.setState((state) => ({
             renderOnehost: false,
@@ -35,29 +27,11 @@ class Host extends React.Component {
         }));
     }
 
-    handleClick(i) {
-        this.setState((state) => ({
-            renderOnehost: true,
-            hostValue: i,
-        }));
-    }
 
-    renderAll() {
-        const json_data = getJsonData(); 
-        let data = [];
-        for (let x in json_data.data) {
-            data.push(<HostButton host_name={json_data.data[x].host_name} onClick={() => this.handleClick(x)} />);
-        }
-        return data;
-    }
-    renderHost(number) {
-        const json_data = getJsonData(); 
-
-        return <HostButton host_name={json_data.data[number].host_name} onClick={() => this.handleClick(number)} />;
-    }
     renderServices(number) {
         return <Services renderOneService={true} serviceValue={number} />;
     }
+
     renderBackButton() {
         return <BackButton onClick={() => this.handleBackClick()} />;
     }
