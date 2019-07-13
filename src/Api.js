@@ -15,7 +15,7 @@ export function getJsonData() {
                     {
                         id: 0,
                         host_id:0,
-                        proto: 'i dont know',
+                        proto: 'i luv you',
                         port: 666,
                         state:'active',
                         name:'samba',
@@ -88,7 +88,7 @@ export function getJsonData() {
             {
                 id: 2,
                 address: '49.200.154.200',
-                host_name: 'Pentagon',
+                host_name: 'NASA',
                 os:'DOS',
                 comment:'Try google how hack Pentagon',
                 creted:'2019-07-10 14:35',

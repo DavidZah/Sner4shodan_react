@@ -2,36 +2,26 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { withRouter } from "react-router";
 import {getJsonData} from './../Api'
+import {ErrorNotFound} from './NotFound'
 
 
-
-function BackButton() {
+function BackButton(props) {
         return (
-            <button className="back" onClick={() => this.props.onClick()}>
+            <button className="back" onClick={() => props.onClick()}>
                 Back
             </button>
         );
 }
 
-function ErrorNotFound(props){
-    return(
-        <h2>Don´t found any {props.name}</h2>
-    );
-}
+
 
 class Host extends React.Component {
-    
 
   
     render(){
       return(
           <div>
-          <ErrorNotFound 
-          name ={this.props.match.params.id}
-          />
-          <BackButton 
-          
-          />
+          <ErrorNotFound/>
         </div>
       );
     }
