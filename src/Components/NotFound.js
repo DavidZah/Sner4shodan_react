@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router'
+import {Redirect} from 'react-router'
 
 function BackButton(props) {
     return (

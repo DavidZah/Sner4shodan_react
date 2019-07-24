@@ -1,9 +1,9 @@
 import React from 'react';
 import { Home } from './Components/Home';
-import Services from './Components/Service';
+import { Services } from './Components/Service';
 import { Hosts } from './Components/Hosts';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Host from './Components/Host';
+import { Host } from './Components/Host';
 
 function AppRouter() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import Services from './Service';
-import {getJsonData} from './../Api';
+import { Services } from './Service';
+import { getJsonData } from './../Api';
 
 export function Home() {
     const projectName = 'Sner4Shodan';

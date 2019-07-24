@@ -1,9 +1,7 @@
 import React from 'react';
-import {getJsonData} from './../Api'
-import { Navigation } from 'react-router'
+import { getJsonData } from './../Api';
 
-
- function HostButton(props) {
+function HostButton(props) {
     return (
         <div>
             <button className="hostButton" onClick={() => props.onClick()}>
@@ -13,36 +11,29 @@ import { Navigation } from 'react-router'
     );
 }
 
-export class Hosts extends React.Component{
-    
+export class Hosts extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { returnToHost: false, renderHostNum:0}; 
+        this.state = { returnToHost: false, renderHostNum: 0 };
 
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick(i) {
         const json_data = getJsonData();
-        this.props.history.push(`/host/`+json_data.data[i].host_name)
+        this.props.history.push(`/host/` + json_data.data[i].host_name);
     }
 
     renderAll() {
         const json_data = getJsonData();
-        let data = []; 
+        let data = [];
         for (let i in json_data.data) {
-            data.push(<HostButton 
-                host_name={json_data.data[i].host_name} 
-                onClick={() => this.handleClick(i)} />);
+            data.push(<HostButton host_name={json_data.data[i].host_name} onClick={() => this.handleClick(i)} />);
         }
         return data;
     }
 
-    render(){
-
-        return(
-            this.renderAll()
-        );
-        
+    render() {
+        return this.renderAll();
     }
 }

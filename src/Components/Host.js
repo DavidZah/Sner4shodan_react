@@ -1,45 +1,60 @@
 import React from 'react';
-import {getJsonData} from './../Api'
-import {ErrorNotFound} from './NotFound'
-import Services from './Service';
+import { getJsonData } from './../Api';
+import { ErrorNotFound } from './NotFound';
+import { Services } from './Service';
+import { Redirect } from 'react-router';
 
 function BackButton(props) {
-        return (
-            <button className="back" onClick={() => props.onClick()}>
-                Back
-            </button>
-        );
+    return (
+        <button className="back" onClick={() => props.onClick()}>
+            Back
+        </button>
+    );
 }
 
+export class Host extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { returnToHost: false };
+    }
 
+    findId(json_data) {
+        var id_name = this.props.match.params.id;
 
-class Host extends React.Component {
-
-    findId(json_data){
-      var id_name = this.props.match.params.id;
-      
-      for(var i in json_data.data){
-        if(json_data.data[i].host_name == id_name) {
-          this.state = { hostFound:true};
-          return(json_data.data[i]); 
+        for (var i in json_data.data) {
+            if (json_data.data[i].host_name === id_name) {
+                return json_data.data[i];
+            }
         }
-        
-      } 
-      this.state = { hostFound:false};
+        return false;
     }
 
-    render(){
-      const json_data = getJsonData();
-      var x = this.findId(json_data);
-      if(this.state.hostFound){
-        return(
-            <Services renderOneService={true} service={x} />
-        );
-      }
-      return(
-          <ErrorNotFound/>
-      );
+    handleClick() {
+        this.setState(() => ({
+            returnToHost: true,
+        }));
+    }
+
+    render() {
+        const json_data = getJsonData();
+        var x = this.findId(json_data);
+
+        if (this.state.returnToHost) {
+            this.setState(() => ({
+                returnToHost: false,
+            }));
+            return <Redirect to="/hosts" />;
+        }
+
+        if (x !== false) {
+            return (
+                <div>
+                    <Services renderOneService={true} service={x} />
+                    <BackButton onClick={() => this.handleClick()} />
+                </div>
+            );
+        }
+
+        return <ErrorNotFound />;
     }
 }
-
-export default Host;
