@@ -9,18 +9,22 @@ function AppRouter() {
     return (
         <Router>
             <>
-                <nav>
+                
+                <nav class = "navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                <span class="navbar-brand">Sner 4 Shodan</span>
                     <ul>
-                        <span>
+                        <span class="navbar-brand">
                             <Link to="/"> Home </Link>
                         </span>
-                        <span>
+                        <span class="navbar-brand">
                             <Link to="/hosts/"> Hosts </Link>
                         </span>
-                        <span>
+                        <span class="navbar-brand">
                             <Link to="/services/"> Services </Link>
                         </span>
                     </ul>
+                    </div>
                 </nav>
                 <Route path="/services/" exact component={Services} />
                 <Route path="/hosts/" excat component={Hosts} />

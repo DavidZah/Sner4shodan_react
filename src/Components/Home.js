@@ -3,15 +3,16 @@ import { Services } from './Service';
 import { getJsonData } from './../Api';
 
 export function Home() {
-    const projectName = 'Sner4Shodan';
+
     const json_data = getJsonData();
     return (
+        
         <div>
-            <div className="projectName">{projectName}</div>
+            <div class="col-xs-6 col-lg-4"></div>
             {json_data.data.map((service, serviceKey) => (
                 <div key={serviceKey}>
                     <h1>{service.host_name}</h1>
-                    <Services renderOneService={true} service={service} />
+                    <p><Services renderOneService={true} service={service} /></p>
                 </div>
             ))}
         </div>
