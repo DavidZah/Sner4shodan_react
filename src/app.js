@@ -7,30 +7,33 @@ import { Host } from './Components/Host';
 
 function AppRouter() {
     return (
+
         <Router>
-            <>
-                
-                <nav class = "navbar navbar-inverse navbar-fixed-top">
-                <div class="container">
-                <span class="navbar-brand">Sner 4 Shodan</span>
-                    <ul>
-                        <span class="navbar-brand">
-                            <Link to="/"> Home </Link>
-                        </span>
-                        <span class="navbar-brand">
-                            <Link to="/hosts/"> Hosts </Link>
-                        </span>
-                        <span class="navbar-brand">
-                            <Link to="/services/"> Services </Link>
-                        </span>
-                    </ul>
+                <nav class = "navbar navbar-inverse navbar-static-top">
+                <div class="container-fluid">
+                        <div class="navbar-header">
+                        <a class="navbar-brand">Sner 4 Shodan</a>
+                        </div>
+                        <div id="navbar" class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav">
+                                <li >
+                                    <Link to="/"> Home </Link>
+                                </li>
+                                <li >
+                                    <Link to="/hosts/"> Hosts </Link>
+                                </li>
+                                <li >
+                                    <Link to="/services/"> Services </Link>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
+                
                 <Route path="/services/" exact component={Services} />
                 <Route path="/hosts/" excat component={Hosts} />
                 <Route path="/host/:id" component={Host} />
                 <Route path="/" exact component={Home} />
-            </>
         </Router>
     );
 }
