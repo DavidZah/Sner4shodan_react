@@ -12,7 +12,7 @@ function AppRouter() {
                 <nav class = "navbar navbar-inverse navbar-static-top">
                 <div class="container-fluid">
                         <div class="navbar-header">
-                        <a class="navbar-brand">Sner 4 Shodan</a>
+                        <p class="navbar-brand">Sner 4 Shodan</p>
                         </div>
                         <div id="navbar" class="collapse navbar-collapse">
                                 <ul class="nav navbar-nav">

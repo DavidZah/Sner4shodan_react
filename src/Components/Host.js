@@ -6,7 +6,7 @@ import { Redirect } from 'react-router';
 
 function BackButton(props) {
     return (
-        <button className="back" onClick={() => props.onClick()}>
+        <button class="btn btn-default" onClick={() => props.onClick()}>
             Back
         </button>
     );

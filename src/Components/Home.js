@@ -7,12 +7,16 @@ export function Home() {
     const json_data = getJsonData();
     return (
         
-        <div class="jumbotron">
+        <div>
             {json_data.data.map((service, serviceKey) => (
-                <div class="card">
-                    <div class="card-body"  key={serviceKey}>
-                        <div class ="card-header">{service.host_name}</div>
-                        <p><Services renderOneService={true} service={service} /></p>
+                <div>
+                    <div class="well">
+                        <div class="card-body"  key={serviceKey}>
+                            <h2>{service.host_name}</h2>
+                            <div>
+                                <p><Services renderOneService={true} service={service} /></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             ))}

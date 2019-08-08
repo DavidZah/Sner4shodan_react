@@ -3,7 +3,7 @@ import { getJsonData } from './../Api';
 
 function Service(props) {
     return (
-        <div>
+        <pre>
             <h3>
                 <span className="id">Id:{props.id} </span>
                 <span className="host_id">Host id:{props.host_id}</span>
@@ -15,7 +15,7 @@ function Service(props) {
             <div className="type">Type:{props.type} </div>
             <div className="type">Info:{props.info} </div>
             <div className="type">Commnet:{props.comment} </div>
-        </div>
+        </pre>
     );
 }
 
