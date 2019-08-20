@@ -3,8 +3,8 @@ import { getJsonData } from './../Api';
 
 function HostButton(props) {
     return (
-        <div>
-            <button class="btn btn-default navbar-btn" onClick={() => props.onClick()}>
+        <div class>
+            <button class="btn btn-default" onClick={() => props.onClick()}>
                 {props.host_name}
             </button>
         </div>

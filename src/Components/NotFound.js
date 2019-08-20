@@ -3,7 +3,7 @@ import {Redirect} from 'react-router'
 
 function BackButton(props) {
     return (
-        <button class="btn btn-default navbar-btn"  onClick={() => props.onClick()}>
+        <button className="btn btn-default navbar-btn"  onClick={() => props.onClick()}>
             Back
         </button>
     );

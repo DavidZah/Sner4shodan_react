@@ -9,13 +9,13 @@ function AppRouter() {
     return (
 
         <Router>
-                <nav class = "navbar navbar-inverse navbar-static-top">
-                <div class="container-fluid">
-                        <div class="navbar-header">
-                        <p class="navbar-brand">Sner 4 Shodan</p>
+                <nav className = "navbar navbar-inverse navbar-static-top">
+                <div className = "container-fluid">
+                        <div className="navbar-header">
+                        <p className="navbar-brand">Sner 4 Shodan</p>
                         </div>
-                        <div id="navbar" class="collapse navbar-collapse">
-                                <ul class="nav navbar-nav">
+                        <div id="navbar" className="collapse navbar-collapse">
+                                <ul className="nav navbar-nav">
                                 <li >
                                     <Link to="/"> Home </Link>
                                 </li>

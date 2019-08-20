@@ -9,14 +9,10 @@ export function Home() {
         
         <div>
             {json_data.data.map((service, serviceKey) => (
-                <div>
-                    <div class="well">
-                        <div class="card-body"  key={serviceKey}>
-                            <h2>{service.host_name}</h2>
-                            <div>
-                                <p><Services renderOneService={true} service={service} /></p>
-                            </div>
-                        </div>
+                    <div className="card-body"  key={serviceKey}>
+                        <h2>{service.host_name}</h2>
+                    <div>
+                        <Services renderOneService={true} service={service} />
                     </div>
                 </div>
             ))}
