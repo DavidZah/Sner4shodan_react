@@ -21,7 +21,7 @@ export class Hosts extends React.Component {
 
     handleClick(i) {
         const json_data = getJsonData();
-        this.props.history.push(`/host/` + json_data.data[i].host_name);
+        this.props.history.push(`/host/` + json_data.data[i].address);
     }
 
     renderAll() {

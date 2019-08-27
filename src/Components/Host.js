@@ -6,7 +6,7 @@ import { Redirect } from 'react-router';
 
 function BackButton(props) {
     return (
-        <button class="btn btn-default" onClick={() => props.onClick()}>
+        <button className="btn btn-default" onClick={() => props.onClick()}>
             Back
         </button>
     );
@@ -22,7 +22,7 @@ export class Host extends React.Component {
         var id_name = this.props.match.params.id;
 
         for (var i in json_data.data) {
-            if (json_data.data[i].host_name === id_name) {
+            if (json_data.data[i].address === id_name) {
                 return json_data.data[i];
             }
         }
@@ -37,7 +37,7 @@ export class Host extends React.Component {
 
     render() {
         const json_data = getJsonData();
-        var x = this.findId(json_data);
+        var data = this.findId(json_data);
 
         if (this.state.returnToHost) {
             this.setState(() => ({
@@ -46,10 +46,25 @@ export class Host extends React.Component {
             return <Redirect to="/hosts" />;
         }
 
-        if (x !== false) {
+        if (data !== false) {
             return (
                 <div>
-                    <Services renderOneService={true} service={x} />
+                    <div className="panel panel-default">
+                        <div className="panel-heading">
+                            <h3>Host data</h3>
+                            <div className="panel-body">
+                               
+                               <li>Id:{data.id}</li>
+                               <li>Name:{data.host_name}</li>
+                               <li>Addres:{data.address}</li>
+                               <li>Operating system:{data.os}</li>
+                               <li>Comment:{data.comment}</li>
+                               <li>Created:{data.created}</li>
+                               <li>Modified:{data.modified}</li>
+                            </div>
+                        </div> 
+                    </div>
+                    <Services renderOneService={true} service={data} />
                     <BackButton onClick={() => this.handleClick()} />
                 </div>
             );

@@ -17,14 +17,14 @@ export class ErrorNotFound extends React.Component {
     }
 
 handleClick(){
-    this.setState((state) => ({
+    this.setState(() => ({
         returnToHost:true,
     }));
 
 }
 render(){
     if(this.state.returnToHost){
-        this.setState((state) => ({
+        this.setState(() => ({
             returnToHost:false,
         }));
         return(
