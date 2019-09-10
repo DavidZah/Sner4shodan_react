@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    class={true}
+  >
+    <button
+      class="btn btn-default"
+      onClick={[Function]}
+    >
+      Microsoft
+    </button>
+  </div>,
+  <div
+    class={true}
+  >
+    <button
+      class="btn btn-default"
+      onClick={[Function]}
+    >
+      Sony
+    </button>
+  </div>,
+  <div
+    class={true}
+  >
+    <button
+      class="btn btn-default"
+      onClick={[Function]}
+    >
+      NASA
+    </button>
+  </div>,
+]
+`;
