@@ -14,7 +14,6 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.9.0",
-    "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
     "onchange": "^3.3.0",
     "prettier": "github:prettier/prettier",

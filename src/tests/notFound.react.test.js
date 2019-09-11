@@ -1,8 +1,10 @@
 import React from 'react';  
-import { Hosts } from './Components/Hosts';
 import renderer from 'react-test-renderer';  
+import { ErrorNotFound } from '../Components/NotFound';
+
 
 it('renders correctly', () => {  
-const tree = renderer.create(<Hosts />).toJSON();  
+const tree = renderer.create(<ErrorNotFound/>).toJSON();  
   expect(tree).toMatchSnapshot();  
 });
+
